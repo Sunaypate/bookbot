@@ -3,8 +3,20 @@ import pdb
 def main():
     book_text = get_book_text("books/frankenstein.txt")
     word_count = word_counter(book_text)
-    # print(f"The amount of words in this book are {word_count}")
-    dict_sorter(character_counter_fast(book_text))
+    sorted_char_dict = dict_sorter(character_counter_fast(book_text))
+    print("--- Report for selected book --- ")
+    print()
+    print(f"The amount of words in this book are {word_count}")
+    print()
+
+    
+    for key in sorted_char_dict:
+        print(f"The letter {key} showed up {sorted_char_dict[key]} times.")
+
+    print("--- Report Complete ---")
+
+
+    #print(f"Sorted character list from book plus values are {dict_sorter(character_counter_fast(book_text))}")
 
 
 def get_book_text(filepath):
@@ -49,9 +61,9 @@ def dict_sorter(dict):
         unsorted_keys.pop(min1_index)
     for key in sorted_keys:
         sorted_dict[key] = dict[key]
-        
-    print(f"dict {dict}")
-    print(f"sorted dict {sorted_dict}")
+    
+    return sorted_dict
+
 main()
 
 '''
