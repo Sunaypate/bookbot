@@ -30,6 +30,7 @@ def character_counter_fast(string):
 def dict_sorter(dict):
     unsorted_keys = []
     sorted_keys = []
+    sorted_dict = {}
     min1 = ""
     for key in dict:
         unsorted_keys.append(key)
@@ -44,15 +45,13 @@ def dict_sorter(dict):
                 min1 = unsorted_keys[character]
                 min1_index = character
         sorted_keys.append(min1)
-        print(f"list length is {len(unsorted_keys)}")
-        print(f"key to pop is {unsorted_keys[min1_index]}")
+
         unsorted_keys.pop(min1_index)
-        print (f"min index {min1_index}")
+    for key in sorted_keys:
+        sorted_dict[key] = dict[key]
         
-        print (f"min is {min1}")
-        print(f"Unsorted Keys {unsorted_keys}")
-        #print(sorted_keys)
-    print (f"sorted list {sorted_keys}")
+    print(f"dict {dict}")
+    print(f"sorted dict {sorted_dict}")
 main()
 
 '''
